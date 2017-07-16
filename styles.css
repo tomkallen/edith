@@ -13,6 +13,12 @@
     border-radius: 2px;
 }
 
+.edith-content pre {
+    background-color: #555;
+    color: #fff;
+    padding: .25rem;
+}
+
 .edith-menu {
     width: 500px;
     height: 32px;

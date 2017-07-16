@@ -8,9 +8,19 @@ inputField.onkeydown = e => {
 const menu = document.createElement("DIV");
 menu.className = "edith-menu";
 
-const run = (command, prop = null) => document.execCommand(command, false, prop);
+const run = (command, prop = null) => {
+    if (Array.isArray(command)) {
+        return document.execCommand(command[0], false, command[1]);
+    }
+    document.execCommand(command, false, prop);
+}
 
 const buttons = [{
+        command: ['formatBlock', '<P>'],
+        caption: '<b>A</b>',
+        tooltip: 'Normal'
+    },
+    {
         command: 'bold',
         caption: '<b>B</b>',
         tooltip: 'Bold'
@@ -23,6 +33,10 @@ const buttons = [{
         command: 'underline',
         caption: '<u>U</u>',
         tooltip: 'Underline'
+    }, , {
+        command: ['formatBlock', '<PRE>'],
+        caption: '<b>&lt;/&gt;</b>',
+        tooltip: 'Code'
     }
 ];
 
