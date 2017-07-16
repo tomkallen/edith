@@ -8,6 +8,8 @@ inputField.onkeydown = e => {
 const menu = document.createElement("DIV");
 menu.className = "edith-menu";
 
+
+
 const run = (command, prop = null) => {
     if (Array.isArray(command)) {
         return document.execCommand(command[0], false, command[1]);
@@ -33,7 +35,7 @@ const buttons = [{
         command: 'underline',
         caption: '<u>U</u>',
         tooltip: 'Underline'
-    }, , {
+    }, {
         command: ['formatBlock', '<PRE>'],
         caption: '<b>&lt;/&gt;</b>',
         tooltip: 'Code'
@@ -54,3 +56,6 @@ buttons.forEach(b => {
 
 edith.appendChild(menu);
 edith.appendChild(inputField);
+
+const save = document.getElementById("edith-save");
+save.addEventListener('click', e=>console.log(String(inputField.innerHTML)));
