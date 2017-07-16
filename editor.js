@@ -9,13 +9,10 @@ inputField.onkeydown = e => {
 const menu = document.createElement("DIV");
 menu.className = "edith-menu";
 
-
-
 const run = (command, prop = null) => {
-    if (Array.isArray(command)) {
-        return document.execCommand(command[0], false, command[1]);
-    }
-    document.execCommand(command, false, prop);
+    return Array.isArray(command) ?
+        document.execCommand(command[0], false, command[1]) :
+        document.execCommand(command, false, prop);
 }
 
 const buttons = [{
