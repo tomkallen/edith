@@ -1,5 +1,6 @@
 const edith = document.getElementById("edith");
 const inputField = document.createElement("DIV");
+const savedText = document.getElementsByClassName("edith-saved-text")[0];
 inputField.className = "edith-content";
 inputField.contentEditable = true;
 inputField.onkeydown = e => {
@@ -57,5 +58,5 @@ buttons.forEach(b => {
 edith.appendChild(menu);
 edith.appendChild(inputField);
 
-const saveText = () => console.log(String(inputField.innerHTML))
+const saveText = () => savedText.innerHTML = inputField.innerHTML;
 document.getElementById("edith-save").onclick = saveText;
