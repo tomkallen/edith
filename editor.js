@@ -57,5 +57,4 @@ buttons.forEach(b => {
 edith.appendChild(menu);
 edith.appendChild(inputField);
 
-const save = document.getElementById("edith-save");
-save.addEventListener('click', e=>console.log(String(inputField.innerHTML)));
+document.getElementById("edith-save").addEventListener('click', e => console.log(String(inputField.innerHTML)));
