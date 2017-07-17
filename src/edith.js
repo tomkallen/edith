@@ -8,7 +8,7 @@ const run = (command, prop = null) => Array.isArray(command) ?
 
 // Text format actions. Each subarray is a section of a menu
 const menu = document.createElement("DIV");
-menu.className = "edith-menu";
+menu.className = "edith-menu"; 
 const buttons = [
     [{
             command: ['formatBlock', '<P>'],

@@ -1,0 +1,28 @@
+{
+  "name": "edith",
+  "version": "0.0.1",
+  "description": "",
+  "main": "editor.js",
+  "scripts": {
+    "start": "webpack",
+    "build": "webpack -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomkallen/edith.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tomkallen/edith/issues"
+  },
+  "homepage": "https://github.com/tomkallen/edith#readme",
+  "dependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "browser-sync": "^2.18.12",
+    "browser-sync-webpack-plugin": "^1.2.0",
+    "webpack": "^3.3.0",
+    "webpack-merge": "^4.1.0"
+  }
+}
