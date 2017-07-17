@@ -6,10 +6,10 @@
 .edith-content {
     width: 500px;
     height: 400px;
-    background-color: #eee;
+    background-color: #fafafa;
     outline: none;
     padding: .5rem;
-    border: 1px solid #222;
+    border: 1px solid #555;
     border-radius: 2px;
 }
 
@@ -20,30 +20,35 @@
 }
 
 .edith-menu {
-    width: 500px;
-    height: 32px;
-    background-color: #ddd;
+    width: 500px;    
+    background-color: #fdfdfd;
     padding: .5rem;
     margin-bottom: .125rem;
-    border: 1px solid #222;
+    border: 1px solid #aaa;
     border-radius: 2px;
     user-select: none;
 }
 
+.edith-section {
+    display: inline-block;
+    margin: .25rem;
+    border: 1px dotted #aaa;    
+}
+
 .edith-button {
     display: inline-block;
-    background-color: #ccc;
+    background-color: #eee;
     position: relative;
     height: 2rem;
     width: 2rem;
-    margin-right: 0.25rem;
+    margin: 0.125rem;
     cursor: pointer;
     user-select: none;
     border-radius: 2px;
 }
 
 .edith-button:hover {
-    background-color: #eee;
+    background-color: #999;
 }
 
 .edith-button * {
