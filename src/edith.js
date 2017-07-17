@@ -1,4 +1,5 @@
 import {buttons} from './buttons';
+import './styles.css';
 // Editor holder div
 const edith = document.getElementById("edith");
 

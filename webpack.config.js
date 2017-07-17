@@ -15,17 +15,22 @@ const common = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: './dist/',
-    filename: 'index.js'
+    filename: 'edith.js'
   },
-  module: {
+  module: {    
     rules: [
       { 
         test: /\.js$/, 
-        use: ['babel-loader'], 
-        include: path.join(__dirname, 'src') // source dir
+        use: 'babel-loader?presets[]=es2015',
+        include: path.join(__dirname, 'src'), // source dir        
+      },  
+            {
+        test: /\.css$/,
+        use: ['css-loader' ],
+        include: path.join(__dirname, 'src'),
+      }    
+    ],
       },
-    ]
-  },
   node: {
     fs: 'empty',
     net: 'empty',

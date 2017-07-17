@@ -2,7 +2,7 @@
   "name": "edith",
   "version": "0.0.1",
   "description": "",
-  "main": "editor.js",
+  "main": "./dist/edith.js",
   "scripts": {
     "start": "webpack",
     "build": "webpack -p"
@@ -26,5 +26,8 @@
     "browser-sync-webpack-plugin": "^1.2.0",
     "webpack": "^3.3.0",
     "webpack-merge": "^4.1.0"
+  },
+  "devDependencies": {
+    "css-loader": "^0.28.4"
   }
 }
