@@ -1,20 +1,14 @@
+// Editor holder div
 const edith = document.getElementById("edith");
-const inputField = document.createElement("DIV");
-const savedText = document.getElementsByClassName("edith-saved-text")[0];
-inputField.className = "edith-content";
-inputField.contentEditable = true;
-// inputField.onkeydown = e => {
-//     e.which === 9 && event.preventDefault()
-// };
+
+// Text formatting via commandexec wrapper
+const run = (command, prop = null) => Array.isArray(command) ?
+    document.execCommand(command[0], false, command[1]) :
+    document.execCommand(command, false, prop);
+
+// Text format actions. Each subarray is a section of a menu
 const menu = document.createElement("DIV");
 menu.className = "edith-menu";
-
-const run = (command, prop = null) => {
-    return Array.isArray(command) ?
-        document.execCommand(command[0], false, command[1]) :
-        document.execCommand(command, false, prop);
-}
-
 const buttons = [
     [{
             command: ['formatBlock', '<P>'],
@@ -52,23 +46,22 @@ const buttons = [
             tooltip: 'Quote'
         }
     ],
-    [
-                {
+    [{
             command: ['formatBlock', '<H1>'],
             caption: '<p>H1</p>',
             tooltip: 'H1'
         },
-                    {
+        {
             command: ['formatBlock', '<H2>'],
             caption: '<p>H2</p>',
             tooltip: 'H2'
         },
-                    {
+        {
             command: ['formatBlock', '<H3>'],
             caption: '<p>H3</p>',
             tooltip: 'H3'
         },
-                    {
+        {
             command: ['formatBlock', '<H4>'],
             caption: '<p>H4</p>',
             tooltip: 'H4'
@@ -87,15 +80,16 @@ buttons.forEach(a => {
         button.title = b.tooltip;
         button.onmousedown = e => {
             e.preventDefault();
-            run(b.command)
+            run(b.command);
         };
         section.appendChild(button);
     });
     menu.appendChild(section);
 });
-
 edith.appendChild(menu);
-edith.appendChild(inputField);
 
-const saveText = () => savedText.innerHTML = inputField.innerHTML;
-document.getElementById("edith-save").onclick = saveText;
+// Main input field
+const inputField = document.createElement("DIV");
+inputField.className = "edith-content";
+inputField.contentEditable = true;
+edith.appendChild(inputField);
