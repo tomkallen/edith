@@ -2,7 +2,7 @@
   "name": "edith",
   "version": "0.0.1",
   "description": "",
-  "main": "./dist/edith.js",
+  "main": "./dist/edith.min.js",
   "scripts": {
     "start": "webpack",
     "build": "webpack -p"
