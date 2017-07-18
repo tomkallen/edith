@@ -30,10 +30,10 @@ buttons.forEach(a => {
     });
     menu.appendChild(section);
 });
-edith.appendChild(menu);
 
 // Main input field
 const inputField = document.createElement("DIV");
 inputField.className = "edith-content";
 inputField.contentEditable = true;
 edith.appendChild(inputField);
+edith.appendChild(menu);

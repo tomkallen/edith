@@ -4,7 +4,7 @@ const webpack = require("webpack");
 const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-const TARGET = process.env.npm_lifecycle_event; // npm run start || npm run build
+const TARGET = process.env.npm_lifecycle_event;
 
 const common = {
   entry: {
@@ -23,7 +23,7 @@ const common = {
       {
         test: /\.js$/,
         use: "babel-loader?presets[]=es2015",
-        include: path.join(__dirname, "src") // source dir
+        include: path.join(__dirname, "src")
       },
       {
         test: /\.css$/,
@@ -40,7 +40,6 @@ const common = {
 };
 
 if (TARGET === "build") {
-  // prod config
   module.exports = merge(common, {
     plugins: [
       new webpack.optimize.UglifyJsPlugin({
@@ -54,20 +53,17 @@ if (TARGET === "build") {
         filename: "[name].css"
       })
     ],
-    module: {
-      rules: [
-        {
-          test: /\.css$/,
-          use: ExtractTextPlugin.extract({
-            fallback: "style-loader",
-            use: ["css-loader"]
+    module:{
+      rules: [ {
+        test: /\.css$/,
+        use:ExtractTextPlugin.extract({
+              fallback: 'style-loader',
+              use: [ 'css-loader' ]
           })
-        }
-      ]
+      }]
     }
   });
 } else {
-  // DEV config
   module.exports = merge(common, {
     devtool: "eval-source-map",
     watch: true,
@@ -75,8 +71,7 @@ if (TARGET === "build") {
       pathinfo: true
     },
     plugins: [
-      new BrowserSyncPlugin({
-        // Server
+      new BrowserSyncPlugin({        
         host: process.env.IP || "localhost",
         port: process.env.PORT || 3001,
         server: { baseDir: ["./"] }
