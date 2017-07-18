@@ -1,4 +1,5 @@
 import {buttons} from './buttons';
+import './styles.css';
 // Editor holder div
 const edith = document.getElementById("edith");
 
@@ -9,7 +10,7 @@ const run = (command, prop = null) => Array.isArray(command) ?
 
 // Text format actions. Each subarray is a section of a menu
 const menu = document.createElement("DIV");
-menu.className = "edith-menu"; 
+menu.className = "edith-menu";
 
 
 // Acton buttons blocks builder
@@ -29,10 +30,10 @@ buttons.forEach(a => {
     });
     menu.appendChild(section);
 });
-edith.appendChild(menu);
 
 // Main input field
 const inputField = document.createElement("DIV");
 inputField.className = "edith-content";
 inputField.contentEditable = true;
 edith.appendChild(inputField);
+edith.appendChild(menu);
