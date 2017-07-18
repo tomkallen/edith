@@ -9,7 +9,7 @@ const TARGET = process.env.npm_lifecycle_event;
 const common = {
     entry: {
         app: [
-            // 'babel-polyfill', // if need polyfill for old browsers
+            //'babel-polyfill', // if need polyfill for old browsers
             path.resolve(__dirname, "src/edith.js")
         ]
     },
