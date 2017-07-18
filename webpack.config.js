@@ -27,11 +27,18 @@ const common = {
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"]
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [ 'css-loader' ],
+        })
       }
     ]
   },
-  plugins: [],
+  plugins: [
+    new ExtractTextPlugin({
+      filename: "styles.css"
+    })
+  ],
   node: {
     fs: "empty",
     net: "empty",
@@ -49,19 +56,7 @@ if (TARGET === "build") {
           comments: false
         }
       }),
-      new ExtractTextPlugin({
-        filename: "[name].css"
-      })
     ],
-    module:{
-      rules: [ {
-        test: /\.css$/,
-        use:ExtractTextPlugin.extract({
-              fallback: 'style-loader',
-              use: [ 'css-loader' ]
-          })
-      }]
-    }
   });
 } else {
   module.exports = merge(common, {
@@ -71,7 +66,7 @@ if (TARGET === "build") {
       pathinfo: true
     },
     plugins: [
-      new BrowserSyncPlugin({        
+      new BrowserSyncPlugin({
         host: process.env.IP || "localhost",
         port: process.env.PORT || 3001,
         server: { baseDir: ["./"] }
