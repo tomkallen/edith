@@ -3,5 +3,6 @@ export const settings = {
     menuClassName: "edith-menu",
     sectionClassName: "edith-section",
     buttonClassName: "edith-button",
-    contentClassName: "edith-content"
+    contentClassName: "edith-content",
+    placeHolder: "Enter your text"
 };

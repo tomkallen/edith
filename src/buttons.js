@@ -2,28 +2,31 @@ export const buttons = [
   [
     {
       command: ["formatBlock", "<P>"],
-      caption: "<p>A</p>",
-      tooltip: "Normal"
+      caption: "<p>P</p>",
+      tooltip: "Paragraph"      
     },
     {
       command: "bold",
       caption: "<b>B</b>",
-      tooltip: "Bold"
+      tooltip: "Bold Ctrl+B",
+      key: "b"
     },
     {
       command: "italic",
       caption: "<i>I</i>",
-      tooltip: "Italic"
+      tooltip: "Italic Ctrl+I",
+      key: "i"
     },
     {
       command: "underline",
       caption: "<u>U</u>",
-      tooltip: "Underline"
+      tooltip: "Underline Ctrl+U",
+      key: "u"
     },
     {
       command: "strikeThrough",
       caption: "<strike>S</strike>",
-      tooltip: "Strike Through"
+      tooltip: "Strike Through"      
     }
   ],
   [

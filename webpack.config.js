@@ -29,7 +29,7 @@ const common = {
             {
                 test: /\.css$/,
                 use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
+                   // fallback: 'style-loader',
                     use: ['css-loader'],
                 })
             }

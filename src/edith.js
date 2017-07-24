@@ -27,6 +27,13 @@ export const load = (init) => {
                 e.preventDefault();
                 run(b.command);
             };
+            if (button.key) {
+                button.onkeydown = e => {                    
+                    if (e.ctrlKey && e.keyCode === button.key.charCodeAt(0)) {                        
+                        run(b.command);
+                    }
+                }
+            }
             section.appendChild(button);
         });
         menu.appendChild(section);
