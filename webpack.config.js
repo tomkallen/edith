@@ -10,7 +10,8 @@ const common = {
     entry: {
         app: [
             //'babel-polyfill', // if need polyfill for old browsers
-            path.resolve(__dirname, "src/edith.js")
+            path.resolve(__dirname, "src/edith.js"),
+            path.resolve(__dirname, "src/styles.css"),
         ]
     },
     output: {
@@ -21,7 +22,8 @@ const common = {
         filename: "edith.min.js"
     },
     module: {
-        rules: [{
+        rules: [
+            {
                 test: /\.js$/,
                 use: "babel-loader?presets[]=es2015",
                 include: path.join(__dirname, "src")
